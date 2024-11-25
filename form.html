@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avelar Inc. - Lista de Espera</title>
+    <link rel="stylesheet" href="formstyles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="multiStepForm">
+            <!-- Página 1: Boas-Vindas -->
+            <div class="form-page active" data-page="1">
+                <h2>Bem-vindo à Lista de Espera da Avelar Inc.!</h2>
+                <p>Estamos entusiasmados em ter você conosco. Por favor, preencha o formulário abaixo para garantir sua vaga na lista de espera exclusiva.</p>
+                <p>Na Avelar Inc., estamos desenvolvendo um assistente AI que automatiza respostas, agenda compromissos e melhora a comunicação com seus pacientes. Para melhor atendê-lo, precisamos conhecer um pouco mais sobre sua clínica.</p>
+                <button type="button" class="next-btn">Começar</button>
+            </div>
+
+            <!-- Página 2: Informações da Clínica -->
+            <div class="form-page" data-page="2">
+                <h2>Dados da Clínica</h2>
+                <label for="clinicName">Nome da Clínica:</label>
+                <input type="text" id="clinicName" name="clinicName" required>
+
+                <label for="contactEmail">Email de Contato:</label>
+                <input type="email" id="contactEmail" name="contactEmail" required>
+
+                <label for="whatsappNumber">Número de WhatsApp:</label>
+                <input type="tel" id="whatsappNumber" name="whatsappNumber" placeholder="+55 00 00000-0000" required>
+
+                <label for="location">Localização da Clínica:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label>Tipo de Clínica:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="clinicType" value="Fisioterapia Esportiva" required> Fisioterapia Esportiva</label>
+                    <label><input type="radio" name="clinicType" value="Reabilitação Pós-Cirúrgica"> Reabilitação Pós-Cirúrgica</label>
+                    <label><input type="radio" name="clinicType" value="Fisioterapia Geral"> Fisioterapia Geral</label>
+                    <label><input type="radio" name="clinicType" value="Outra"> Outra: <input type="text" name="clinicType_other" id="clinicType_other" placeholder="Especifique" disabled></label>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button type="button" class="prev-btn">Anterior</button>
+                    <button type="button" class="next-btn">Próximo</button>
+                </div>
+            </div>
+
+            <!-- Página 3: Detalhes da Clínica -->
+            <div class="form-page" data-page="3">
+                <h2>Detalhes da Clínica</h2>
+                <label for="numTherapists">Número de Fisioterapeutas:</label>
+                <input type="number" id="numTherapists" name="numTherapists" min="1" required>
+
+                <label for="currentTools">Ferramentas de Gestão Atualmente Utilizadas:</label>
+                <input type="text" id="currentTools" name="currentTools" placeholder="Ex: Calendário Google, Trello" required>
+
+                <label for="painPoints">Principais Desafios na Gestão da Clínica:</label>
+                <textarea id="painPoints" name="painPoints" rows="4" required></textarea>
+
+                <div class="navigation-buttons">
+                    <button type="button" class="prev-btn">Anterior</button>
+                    <button type="button" class="next-btn">Próximo</button>
+                </div>
+            </div>
+
+            <!-- Página 4: Preferências e Feedback -->
+            <div class="form-page" data-page="4">
+                <h2>Preferências e Feedback</h2>
+
+                <label>Como você prefere receber atualizações sobre o Avelar?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="update_preference" value="Email" required> Email</label>
+                    <label><input type="radio" name="update_preference" value="WhatsApp"> WhatsApp</label>
+                    <label><input type="radio" name="update_preference" value="Telefone"> Telefone</label>
+                    <label><input type="radio" name="update_preference" value="Outro"> Outro: <input type="text" name="update_preference_other" id="update_preference_other" placeholder="Especifique" disabled></label>
+                </div>
+
+                <label>Você estaria interessado em participar de testes beta do Avelar?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="beta_interest" value="Sim" required> Sim</label>
+                    <label><input type="radio" name="beta_interest" value="Não"> Não</label>
+                    <label><input type="radio" name="beta_interest" value="Talvez no futuro"> Talvez no futuro</label>
+                </div>
+
+                <label for="additionalComments">Comentários Adicionais:</label>
+                <textarea id="additionalComments" name="additionalComments" rows="4"></textarea>
+
+                <div class="navigation-buttons">
+                    <button type="button" class="prev-btn">Anterior</button>
+                    <button type="button" class="next-btn">Próximo</button>
+                </div>
+            </div>
+
+            <!-- Página 5: Consentimentos e Envio -->
+            <div class="form-page" data-page="5">
+                <h2>Quase Lá!</h2>
+
+                <label>
+                    <input type="checkbox" name="privacy_consent" required> Aceito receber comunicações da Avelar Inc. de acordo com a <a href="#">Política de Privacidade</a>.
+                </label>
+
+                <label>
+                    <input type="checkbox" name="feedback_consent"> Aceito participar de pesquisas e fornecer feedback sobre o Avelar Inc.
+                </label>
+
+                <div class="navigation-buttons">
+                    <button type="button" class="prev-btn">Anterior</button>
+                    <button type="submit" class="submit-btn">Enviar Inscrição</button>
+                </div>
+            </div>
+
+            <!-- Mensagem de Confirmação -->
+            <div class="form-page" data-page="6">
+                <h2>Obrigado por se inscrever!</h2>
+                <p>Em breve, você receberá um email de confirmação com mais detalhes sobre como o Avelar pode transformar a gestão da sua clínica.</p>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
