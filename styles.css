@@ -13,18 +13,6 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
-header {
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.logo {
-    max-width: 150px;
-}
-
 /* Hero Section */
 .hero {
     display: flex;
@@ -33,6 +21,13 @@ header {
     justify-content: center;
     padding: 60px 20px;
     background-color: #ffffff;
+}
+
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-text {
@@ -66,11 +61,12 @@ header {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
     background-color: #2f855a;
+    transform: scale(1.05);
 }
 
 .hero-image {
@@ -80,6 +76,39 @@ header {
 .hero-image img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Bullet Points */
+.bullet-points li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.bullet-points li::before {
+    content: "✔️";
+    margin-right: 10px;
+    color: #38a169;
+    font-size: 1.2rem;
+}
+
+/* Features Section */
+.features li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.features li .icon {
+    margin-right: 10px;
+    color: #3182ce;
+    font-size: 1.2rem;
 }
 
 /* Benefits Section */
@@ -95,7 +124,7 @@ header {
     color: #2d3748;
 }
 
-.benefit-list {
+.benefit-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
@@ -141,19 +170,34 @@ header {
     color: #2d3748;
 }
 
-.testimonial blockquote {
+.testimonials blockquote {
     font-size: 1.2rem;
     font-style: italic;
     color: #555;
     max-width: 700px;
     margin: 0 auto 10px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border-left: 5px solid #38a169;
 }
 
-.testimonial cite {
+.testimonials cite {
     display: block;
     margin-top: 10px;
     font-weight: bold;
     color: #2b6cb0;
+}
+
+.stats {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.stats li {
+    font-size: 1rem;
+    color: #2d3748;
+    margin-bottom: 10px;
 }
 
 /* Signup Section */
@@ -175,52 +219,15 @@ header {
     color: #555;
 }
 
-.signup-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.signup-form input[type="email"] {
-    padding: 15px;
-    width: 100%;
-    max-width: 400px;
-    border: 1px solid #cbd5e0;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-size: 1rem;
-}
-
-.signup-form button {
-    padding: 15px 30px;
-    background-color: #3182ce;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.signup-form button:hover {
-    background-color: #2b6cb0;
-}
-
 .urgent {
     margin-top: 20px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #e53e3e;
     font-weight: bold;
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-    border-top: 1px solid #eaeaea;
-    color: #555;
-    font-size: 0.9rem;
+    background-color: #fff5f5;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
 }
 
 /* Responsividade */
@@ -235,17 +242,13 @@ footer {
         margin-right: 40px;
     }
 
-    .benefit-list {
+    .benefit-grid {
         grid-template-columns: 1fr 1fr;
-    }
-
-    .testimonial blockquote {
-        font-size: 1.5rem;
     }
 }
 
 @media (min-width: 1024px) {
-    .benefit-list {
+    .benefit-grid {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
@@ -255,5 +258,9 @@ footer {
 
     .hero-text h2 {
         font-size: 1.75rem;
+    }
+
+    .testimonials blockquote {
+        font-size: 1.4rem;
     }
 }
