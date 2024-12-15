@@ -230,6 +230,13 @@ body {
     display: inline-block;
 }
 
+/* Main Container */
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* Responsividade */
 @media (min-width: 768px) {
     .hero {
